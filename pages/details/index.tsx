@@ -1,7 +1,9 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { apiLists } from "../../static/movieApiLists";
 import { url } from "inspector";
+import Navber from "../components/navbar";
+import VideosList from "../components/videoList";
 
 export default function Index() {
   const [getMovieDetails, setMovieDetails] = useState<any>({});
@@ -10,6 +12,7 @@ export default function Index() {
 
   const router = useRouter();
   const { id } = router.query;
+  const iframeRef = useRef(null);
 
   const apiFetch = async (url: string) => {
     const res = await fetch(url);
@@ -28,14 +31,30 @@ export default function Index() {
     }
   }, [id]);
 
-  console.log("getMovieDetails", getMovieDetails);
-  console.log("getMovieVideo", getMovieVideo);
-  console.log("getMovieCredits", getMovieCredits);
-
   return (
-    <div>
-      <div></div>
-      <div></div>
+    <div className="w-full h-screen">
+      <Navber />
+      <div className="flex flex-row w-full h-[92vh]">
+        <div className="w-[72%]  p-[50px] flex flex-row justify-center">
+          {getMovieVideo?.results?.length ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${getMovieVideo?.results[0]?.key}`}
+              ref={iframeRef}
+              title="video"
+              className="w-[70%] h-[600px] pt-[30px] rounded-xl"
+            ></iframe>
+          ) : getMovieCredits?.cast?.length ? (
+            <img
+              src={`https://image.tmdb.org/t/p/original/${getMovieCredits?.cast[0]?.profile_path}`}
+            />
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className=" w-[28%] flex flex-col overflow-y-scroll">
+          <VideosList />
+        </div>
+      </div>
     </div>
   );
 }

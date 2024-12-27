@@ -5,6 +5,7 @@ import { FaMicrophone } from "react-icons/fa6";
 import { ChangeEvent, useState, KeyboardEvent } from "react";
 
 import SearchQuery from "./searchQuery";
+import Router from "next/router";
 
 export default function Navber() {
   const [onFocus, setOnFocus] = useState<boolean>(false);
@@ -19,8 +20,11 @@ export default function Navber() {
   };
 
   return (
-    <div className="w-full h-[8vh] bg-[#0F0F0F]  flex flex-row justify-between items-center px-[25px]">
-      <div className="flex flex-row items-center ">
+    <div className="w-auto h-[8vh] bg-[#0F0F0F]  flex flex-row justify-between items-center px-[25px] overflow-x-hidden">
+      <div
+        className="flex flex-row items-center cursor-pointer"
+        onClick={() => Router.push(`http://localhost:3000/`)}
+      >
         <HiOutlineBars3 className="mr-[20px] text-[26px]" />
         <div className="flex items-center">
           <FaYoutube className="text-red-600 text-[30px]" />
@@ -29,7 +33,7 @@ export default function Navber() {
       </div>
       <div className="flex w-auto ">
         <div
-          className={`flex items-center border-[1px] border-[#303030]  bg-[#1a1a1a] rounded-full min-w-auto max-w-[450px]  relative`}
+          className={`flex items-center border-[1px] border-[#303030]  bg-[#1a1a1a] rounded-full min-w-auto max-w-[450px] relative`}
         >
           <input
             placeholder="Search"
