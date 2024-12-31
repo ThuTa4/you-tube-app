@@ -20,6 +20,11 @@ export default function Main() {
 
   return (
     <div className="w-full h-full flex flex-row items-start justify-start flex-wrap overflow-x-hidden">
+      <link
+        rel="shortcut icon"
+        href="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png"
+        type="image/x-icon"
+      />
       {getMovies?.results?.map((movie: any, index: number) => (
         <div
           key={index}

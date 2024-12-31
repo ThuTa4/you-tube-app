@@ -5,7 +5,7 @@ import { MdHistory } from "react-icons/md";
 import { CgPlayList } from "react-icons/cg";
 import { GoVideo } from "react-icons/go";
 import { MdOutlineWatchLater } from "react-icons/md";
-import { BiLike } from "react-icons/bi";
+import { FcTodoList } from "react-icons/fc";
 
 export const sideBarlist = [
   {
@@ -16,36 +16,36 @@ export const sideBarlist = [
   {
     name: "Shorts",
     icon: <SiYoutubeshorts size={20} />,
-    src: "http://localhost:3000/Short",
+    src: "http://localhost:3000/short",
   },
   {
     name: "Subscriptions",
     icon: <MdOutlineSubscriptions size={20} />,
-    src: "http://localhost:3000/Subscriptions",
+    src: "http://localhost:3000/subscriptions",
   },
   {
     name: "History",
     icon: <MdHistory size={25} />,
-    src: "http://localhost:3000/History",
+    src: "http://localhost:3000/history",
   },
   {
     name: "Playlist",
     icon: <CgPlayList size={25} />,
-    src: "http://localhost:3000/Playlist",
+    src: "https://www.youtube.com/feed/playlists",
   },
   {
     name: "Your videos",
     icon: <GoVideo size={25} />,
-    src: "http://localhost:3000/YourVideos",
+    src: "https://studio.youtube.com/channel/UCLrBpIKXkP3zMQaXJtCRGSQ/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D",
   },
   {
     name: "Watch later",
     icon: <MdOutlineWatchLater size={25} />,
-    src: "http://localhost:3000/WatchLater",
+    src: "https://www.youtube.com/playlist?list=WL",
   },
   {
-    name: "like videos",
-    icon: <BiLike size={25} />,
-    src: "http://localhost:3000/likeVideos",
+    name: "To do List",
+    icon: <FcTodoList size={25} />,
+    src: "http://localhost:3000/toDoList",
   },
 ];

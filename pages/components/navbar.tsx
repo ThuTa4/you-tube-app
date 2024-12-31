@@ -19,21 +19,23 @@ export default function Navber() {
     }
   };
 
+  console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ", onFocus);
+
   return (
     <div className="w-auto h-[8vh] bg-[#0F0F0F]  flex flex-row justify-between items-center px-[25px] overflow-x-hidden">
-      <div
-        className="flex flex-row items-center cursor-pointer"
-        onClick={() => Router.push(`http://localhost:3000/`)}
-      >
+      <div className="flex flex-row items-center cursor-pointer">
         <HiOutlineBars3 className="mr-[20px] text-[26px]" />
-        <div className="flex items-center">
+        <div
+          className="flex items-center "
+          onClick={() => Router.push(`http://localhost:3000/`)}
+        >
           <FaYoutube className="text-red-600 text-[30px]" />
           <span className="font-bold text-[23px] indent-0">YouTube</span>
         </div>
       </div>
       <div className="flex w-auto ">
         <div
-          className={`flex items-center border-[1px] border-[#303030]  bg-[#1a1a1a] rounded-full min-w-auto max-w-[450px] relative`}
+          className={`flex items-center border-[1px] border-[#303030]  bg-[#1a1a1a] rounded-full min-w-auto max-w-[450px] `}
         >
           <input
             placeholder="Search"
@@ -53,11 +55,11 @@ export default function Navber() {
               }
             }}
           />
-          <div className="bg-[#222222] w-[70px] h-full flex items-center justify-center border-l-[1px] border-l-[#303030] rounded-r-full">
+          <div className="bg-[#222222] w-[70px] h-full flex items-center justify-center border-l-[1px] border-l-[#303030] rounded-r-full relative">
             <CiSearch className="text-[23px] " />
           </div>
           {getSearchValues.length ? (
-            <div className=" absolute  bg-[#212121] w-full h-auto top-[50px] rounded-xl py-[20px]  ">
+            <div className="fixed bg-[#212121] w-[500px] h-auto top-[60px] rounded-xl py-[20px] ">
               {getSearchValues.map((value: string, index: number) => (
                 <SearchQuery
                   key={index}

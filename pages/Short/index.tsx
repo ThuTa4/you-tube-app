@@ -29,7 +29,7 @@ export default function Index() {
         {getMovies?.results?.map((movie: any, index: number) => (
           <div
             key={index}
-            className="w-[460px] h-[700px] rounded-xl mx-[10px] flex flex-row justify-start  mb-[80px] mt-[30px]"
+            className="max-w-[460px] h-[700px] rounded-xl mx-[10px] flex flex-row justify-start  mb-[80px] mt-[30px]"
           >
             <div className="w-[400px]  h-[700px]">
               <img
@@ -38,23 +38,23 @@ export default function Index() {
               />
             </div>
             <div className="w-[60px]  h-[700px] flex flex-col justify-end items-center">
-              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center">
+              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center cursor-pointer">
                 <AiFillLike className=" size-[25px]" />
               </div>
               <p className="mb-[20px]">Like</p>
-              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center">
+              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center cursor-pointer">
                 <AiFillDislike className=" size-[25px]" />
               </div>
               <p className="mb-[20px]">Dislike</p>
-              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center">
+              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center cursor-pointer">
                 <BiCommentDetail className=" size-[25px]" />
               </div>
               <p className="mb-[20px]">{Math.ceil(movie.popularity)}K</p>
-              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center">
+              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center cursor-pointer">
                 <PiShareFatFill className=" size-[25px]" />
               </div>
               <p className="mb-[20px]">Share </p>
-              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center">
+              <div className="w-[45px] h-[45px] bg-[#565556] mb-[10px] rounded-full flex flex-row items-center justify-center cursor-pointer">
                 <HiDotsVertical className=" size-[25px]" />
               </div>
             </div>

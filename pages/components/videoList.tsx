@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { narutoApi } from "../../static/movieApiLists";
+import { playingApi } from "../../static/movieApiLists";
 import { useRouter } from "next/router";
 
 export default function VideosList() {
@@ -14,7 +14,7 @@ export default function VideosList() {
   };
 
   useEffect(() => {
-    apiFetch(narutoApi);
+    apiFetch(playingApi);
     console.log("apiFetch", apiFetch);
   }, []);
 

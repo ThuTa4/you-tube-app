@@ -16,6 +16,7 @@ export default function Index() {
 
   const apiFetch = async (url: string) => {
     const res = await fetch(url);
+    console.log("...........", res);
     return await res.json();
   };
 
